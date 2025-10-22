@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7e3dc7ba211d1305d8eaef5b8d6527a2d85cf8e26b28be550fe0dfbc0256a852
 
 build:
   skip: true  # [win or py<38]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - dbsp_reduce = dbsp_drp.p200_redux:entrypoint
